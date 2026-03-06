@@ -1,0 +1,51 @@
+/* ====== FONDO GENERAL ====== */
+body{
+    background:#f7fbff;
+}
+
+/* ====== TARJETAS ====== */
+.kids-card{
+    border:0;
+    border-radius:1.25rem;
+    box-shadow:0 10px 25px rgba(0,0,0,.06);
+}
+
+/* ====== BOTONES REDONDEADOS ====== */
+.kids-pill{
+    border-radius:999px;
+}
+
+/* ====== NAVBAR ====== */
+.kids-navbar{
+    background:white;
+    border-bottom:3px solid #e8f1ff;
+}
+
+/* ====== LOGO NAVBAR ====== */
+.rk-logo{
+    height:60px;
+    width:auto;
+}
+
+@media (max-width:768px){
+    .rk-logo{
+        height:42px;
+    }
+}
+
+/* ====== HERO HOME (LOGO GRANDE) ====== */
+.rk-hero{
+    background: linear-gradient(180deg, #fff6db, #ffffff);
+    border-radius:22px;
+}
+
+.rk-hero-logo{
+    height:150px;
+    width:auto;
+}
+
+@media (max-width:768px){
+    .rk-hero-logo{
+        height:95px;
+    }
+}

@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700&family=Nunito:wght@400;700&display=swap');
+
+:root{
+  --rk-sky:#eaf7ff;
+  --rk-sun:#fff3c4;
+  --rk-pink:#ffe6f1;
+  --rk-blue:#3b82f6;
+  --rk-purple:#7c3aed;
+  --rk-green:#22c55e;
+  --rk-orange:#fb923c;
+  --rk-shadow: 0 14px 30px rgba(0,0,0,.08);
+  --rk-red: #ef4444;
+  --rk-yellow: #facc15;
+}
+
+/* ====== BASE ====== */
+body{
+  font-family: 'Nunito', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background:
+    radial-gradient(900px 380px at 15% 10%, var(--rk-sun) 0%, rgba(255,243,196,0) 60%),
+    radial-gradient(900px 380px at 85% 12%, var(--rk-pink) 0%, rgba(255,230,241,0) 58%),
+    radial-gradient(900px 420px at 50% 100%, var(--rk-sky) 0%, rgba(234,247,255,0) 60%),
+    #f7fbff;
+  min-height:100vh;
+}
+
+/* Confeti suave (infantil) */
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  background-image:
+    radial-gradient(circle at 12% 18%, rgba(251,146,60,.20) 0 6px, transparent 7px),
+    radial-gradient(circle at 82% 22%, rgba(59,130,246,.18) 0 7px, transparent 8px),
+    radial-gradient(circle at 22% 72%, rgba(34,197,94,.18) 0 6px, transparent 7px),
+    radial-gradient(circle at 72% 78%, rgba(124,58,237,.18) 0 7px, transparent 8px);
+  opacity:.55;
+}
+
+h1,h2,h3,h4,h5,.rk-title{
+  font-family: 'Baloo 2', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  letter-spacing: .2px;
+}
+
+a{ text-decoration:none; }
+
+/* ====== LAYOUT HELPERS ====== */
+.kids-pill{ border-radius:999px !important; }
+
+.kids-card{
+  border:0;
+  border-radius: 1.35rem;
+  box-shadow: var(--rk-shadow);
+  background: rgba(255,255,255,.92);
+  backdrop-filter: blur(8px);
+}
+
+/* Hover "pop" */
+.kids-card{
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.kids-card:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 18px 40px rgba(0,0,0,.10);
+}
+
+/* ====== NAVBAR (sin tocar HTML) ====== */
+.kids-navbar{
+  background: rgba(255,255,255,.92);
+  border-bottom: 4px solid rgba(59,130,246,.15);
+  backdrop-filter: blur(10px);
+}
+
+.navbar .nav-link{
+  font-weight:700;
+  border-radius: 999px;
+  padding: .45rem .75rem;
+  margin-right:.25rem;
+  transition: background-color .12s ease, transform .12s ease;
+}
+.navbar .nav-link:hover{
+  background: rgba(59,130,246,.10);
+  transform: translateY(-1px);
+}
+
+.navbar .nav-link.active{ background: rgba(124,58,237,.12); }
+
+/* Logo más grande SIN cambiar navbar */
+.rk-logo{
+  height: 78px; /* grande */
+  width: auto;
+  display:block;
+}
+@media (max-width: 992px){
+  .rk-logo{ height: 62px; }
+}
+@media (max-width: 768px){
+  .rk-logo{ height: 54px; }
+}
+
+/* ====== HERO HOME ====== */
+.rk-hero{
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #fff1f7, #eef9ff);
+}
+.rk-hero::before{
+  content:"";
+  position:absolute;
+  inset:-40px;
+  background:
+    radial-gradient(140px 140px at 15% 25%, rgba(124,58,237,.16) 0%, rgba(124,58,237,0) 60%),
+    radial-gradient(160px 160px at 85% 15%, rgba(34,197,94,.16) 0%, rgba(34,197,94,0) 60%),
+    radial-gradient(180px 180px at 70% 85%, rgba(251,146,60,.16) 0%, rgba(251,146,60,0) 60%);
+  pointer-events:none;
+}
+
+.rk-hero-logo{
+  height: 120px;
+  width:auto;
+  filter: drop-shadow(0 10px 18px rgba(0,0,0,.12));
+}
+@media (max-width:768px){
+  .rk-hero-logo{ height: 90px; }
+}
+
+/* ====== BUTTONS: estilo infantil ====== */
+.btn{ border-radius: 999px; font-weight: 800; }
+.btn-primary{
+  background: linear-gradient(135deg, var(--rk-blue), var(--rk-purple));
+  border: 0;
+}
+.btn-primary:hover{ filter: brightness(1.03); }
+.btn-outline-primary{ border-width:2px; }
+.btn-warning{ font-weight: 900; }
+
+.btn-outline-danger{ border-width:2px; }
+
+/* Inputs con borde suave */
+.form-control{
+  border-radius: 999px;
+  border: 2px solid rgba(59,130,246,.18);
+}
+.form-select{
+  border-radius: 999px;
+  border: 2px solid rgba(59,130,246,.18);
+}
+.form-control:focus{
+  border-color: rgba(124,58,237,.35);
+  box-shadow: 0 0 0 .25rem rgba(124,58,237,.12);
+}
+.form-select:focus{
+  border-color: rgba(124,58,237,.35);
+  box-shadow: 0 0 0 .25rem rgba(124,58,237,.12);
+}
+
+/* ====== PAGINATION ====== */
+.page-link{ border-radius:999px !important; margin: 0 .15rem; }
+
+/* ====== EMBED VIDEO ====== */
+.ratio iframe{ border-radius: 1rem; }
+
+/* ====== LINKS / TITLES ====== */
+.rk-card-title{
+  display:inline-block;
+  font-family: 'Baloo 2', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-size: 1.15rem;
+  color: #111827;
+}
+.rk-card-title:hover{ color: var(--rk-purple); }
+
+.rk-link{ color:#111827; }
+.rk-link:hover{ color: var(--rk-purple); }
+
+/* ====== FICHA (facts) ====== */
+.rk-fact{
+  background: linear-gradient(135deg, rgba(255,255,255,.85), rgba(255,255,255,.65));
+  border: 2px dashed rgba(59,130,246,.18);
+  border-radius: 1rem;
+  padding: .6rem .75rem;
+}
+.rk-sheet{ border: 4px solid rgba(250,204,21,.28); }
+
+/* ====== MEMORIA ====== */
+.rk-memory-card{ border:0; }
+.rk-memory-inner{
+  position:relative;
+  width:100%;
+  aspect-ratio: 1/1;
+  border-radius: 1.35rem;
+  transform-style: preserve-3d;
+  transition: transform .25s ease;
+  box-shadow: var(--rk-shadow);
+}
+.rk-memory-inner.is-open{ transform: rotateY(180deg); }
+.rk-memory-inner.is-matched{ outline: 4px solid rgba(34,197,94,.35); }
+.rk-memory-face{
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size: 2.2rem;
+  border-radius: 1.35rem;
+  backface-visibility: hidden;
+}
+.rk-memory-back{
+  background: linear-gradient(135deg, rgba(59,130,246,.20), rgba(124,58,237,.18));
+}
+.rk-memory-front{
+  background: linear-gradient(135deg, rgba(250,204,21,.25), rgba(251,146,60,.18));
+  transform: rotateY(180deg);
+}
